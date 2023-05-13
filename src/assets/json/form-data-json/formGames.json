@@ -1,0 +1,35 @@
+[
+  {
+    "gameName": "string",
+    "releaseDate": "2023-05-13T16:49:46.681Z",
+    "price": 0,
+    "description": "string",
+    "publisher": "string",
+    "developer": "string",
+    "gameGenres": [
+      {
+        "genreId": "string",
+        "subGenreId": "string",
+        "visualId": "string",
+        "themeId": "string",
+        "featureId": "string",
+        "playerId": "string",
+        "platformId": "string"
+      }
+    ],
+    "medias": [
+      {
+        "mediaName": "string",
+        "mediaType": "string",
+        "fileSize": 0
+      }
+    ],
+    "icons": [
+      {
+        "iconName": "string",
+        "iconType": "string",
+        "fileSize": 0
+      }
+    ]
+  }
+]
