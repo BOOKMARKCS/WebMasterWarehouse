@@ -1,3 +1,118 @@
-<p>games-index works!</p>
-<button routerLink="edit">edit</button>
+<!--<form *ngIf="formStatus" [formGroup]="formDataJson">-->
+<!--  <input type="text" formControlName="gameName">-->
+<!--  <button (click)="onSubmit()">edit</button>-->
+<!--</form>-->
+
+<form *ngIf="formStatus" [formGroup]="formDataJson" (ngSubmit)="handleFormSubmit()">
+  <div>
+    <div>
+      <h3>Game {{1}}</h3>
+      <div>
+        <label>Game Name:</label>
+        <input type="text" formControlName="gameName">
+      </div>
+      <div>
+        <label>Release Date:</label>
+        <input type="date" formControlName="releaseDate">
+      </div>
+      <div>
+        <label>Price:</label>
+        <input type="number" formControlName="price">
+      </div>
+      <div>
+        <label>Description:</label>
+        <textarea formControlName="description"></textarea>
+      </div>
+      <div>
+        <label>Publisher:</label>
+        <input type="text" formControlName="publisher">
+      </div>
+      <div>
+        <label>Developer:</label>
+        <input type="text" formControlName="developer">
+      </div>
+      <div formArrayName="gameGenres">
+        <h4>Game Genres</h4>
+        <div
+             [formGroupName]="0">
+          <div>
+            <label>Genre ID:</label>
+            <input type="text" formControlName="genreId">
+          </div>
+          <div>
+            <label>Sub-Genre ID:</label>
+            <input type="text" formControlName="subGenreId">
+          </div>
+          <div>
+            <label>Visual ID:</label>
+            <input type="text" formControlName="visualId">
+          </div>
+          <div>
+            <label>Theme ID:</label>
+            <input type="text" formControlName="themeId">
+          </div>
+          <div>
+            <label>Feature ID:</label>
+            <input type="text" formControlName="featureId">
+          </div>
+          <div>
+            <label>Player ID:</label>
+            <input type="text" formControlName="playerId">
+          </div>
+          <div>
+            <label>Platform ID:</label>
+            <input type="text" formControlName="platformId">
+          </div>
+        </div>
+        <div>
+          <button type="button">Add Genre</button>
+        </div>
+      </div>
+      <div formArrayName="medias">
+        <h4>Medias</h4>
+        <div
+             [formGroupName]="0">
+          <div>
+            <label>Media Name:</label>
+            <input type="text" formControlName="mediaName">
+          </div>
+          <div>
+            <label>Media Type:</label>
+            <input type="text" formControlName="mediaType">
+          </div>
+          <div>
+            <label>File Size:</label>
+            <input type="number" formControlName="fileSize">
+          </div>
+        </div>
+        <div>
+          <button type="button">Add Media</button>
+        </div>
+      </div>
+      <div formArrayName="icons">
+        <h4>Medias</h4>
+        <div
+             [formGroupName]="0">
+          <div>
+            <label>Media Name:</label>
+            <input type="text" formControlName="iconName">
+          </div>
+          <div>
+            <label>Media Type:</label>
+            <input type="text" formControlName="iconType">
+          </div>
+          <div>
+            <label>File Size:</label>
+            <input type="number" formControlName="fileSize">
+          </div>
+        </div>
+        <div>
+          <button type="button">Add Media</button>
+        </div>
+      </div>
+    </div>
+    <button type="submit">SAVE</button>
+<!--    <button type="button" (click)="AddForm()">Add</button>-->
+  </div>
+</form>
 
