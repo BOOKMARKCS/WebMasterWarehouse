@@ -1,118 +1,171 @@
-<!--<form *ngIf="formStatus" [formGroup]="formDataJson">-->
-<!--  <input type="text" formControlName="gameName">-->
-<!--  <button (click)="onSubmit()">edit</button>-->
+<!--&lt;!&ndash;<form *ngIf="formStatus" [formGroup]="formDataJson">&ndash;&gt;-->
+<!--&lt;!&ndash;  <input type="text" formControlName="gameName">&ndash;&gt;-->
+<!--&lt;!&ndash;  <button (click)="onSubmit()">edit</button>&ndash;&gt;-->
+<!--&lt;!&ndash;</form>&ndash;&gt;-->
+
+<!--<form *ngIf="formStatus" [formGroup]="formDataJson" (ngSubmit)="handleFormSubmit()">-->
+<!--  <div>-->
+<!--    <div>-->
+<!--      <h3>Game {{1}}</h3>-->
+<!--      <div>-->
+<!--        <label>Game Name:</label>-->
+<!--        <input type="text" formControlName="gameName">-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <label>Release Date:</label>-->
+<!--        <input type="date" formControlName="releaseDate">-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <label>Price:</label>-->
+<!--        <input type="number" formControlName="price">-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <label>Description:</label>-->
+<!--        <textarea formControlName="description"></textarea>-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <label>Publisher:</label>-->
+<!--        <input type="text" formControlName="publisher">-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <label>Developer:</label>-->
+<!--        <input type="text" formControlName="developer">-->
+<!--      </div>-->
+<!--      <div formArrayName="gameGenres">-->
+<!--        <h4>Game Genres</h4>-->
+<!--        <div-->
+<!--             [formGroupName]="0">-->
+<!--          <div>-->
+<!--            <label>Genre ID:</label>-->
+<!--            <input type="text" formControlName="genreId">-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <label>Sub-Genre ID:</label>-->
+<!--            <input type="text" formControlName="subGenreId">-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <label>Visual ID:</label>-->
+<!--            <input type="text" formControlName="visualId">-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <label>Theme ID:</label>-->
+<!--            <input type="text" formControlName="themeId">-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <label>Feature ID:</label>-->
+<!--            <input type="text" formControlName="featureId">-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <label>Player ID:</label>-->
+<!--            <input type="text" formControlName="playerId">-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <label>Platform ID:</label>-->
+<!--            <input type="text" formControlName="platformId">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <button type="button">Add Genre</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div formArrayName="medias">-->
+<!--        <h4>Medias</h4>-->
+<!--        <div-->
+<!--             [formGroupName]="0">-->
+<!--          <div>-->
+<!--            <label>Media Name:</label>-->
+<!--            <input type="text" formControlName="mediaName">-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <label>Media Type:</label>-->
+<!--            <input type="text" formControlName="mediaType">-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <label>File Size:</label>-->
+<!--            <input type="number" formControlName="fileSize">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <button type="button">Add Media</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div formArrayName="icons">-->
+<!--        <h4>Medias</h4>-->
+<!--        <div-->
+<!--             [formGroupName]="0">-->
+<!--          <div>-->
+<!--            <label>Media Name:</label>-->
+<!--            <input type="text" formControlName="iconName">-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <label>Media Type:</label>-->
+<!--            <input type="text" formControlName="iconType">-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <label>File Size:</label>-->
+<!--            <input type="number" formControlName="fileSize">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <button type="button">Add Media</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <button type="submit">SAVE</button>-->
+<!--&lt;!&ndash;    <button type="button" (click)="AddForm()">Add</button>&ndash;&gt;-->
+<!--  </div>-->
 <!--</form>-->
 
-<form *ngIf="formStatus" [formGroup]="formDataJson" (ngSubmit)="handleFormSubmit()">
-  <div>
-    <div>
-      <h3>Game {{1}}</h3>
-      <div>
-        <label>Game Name:</label>
-        <input type="text" formControlName="gameName">
-      </div>
-      <div>
-        <label>Release Date:</label>
-        <input type="date" formControlName="releaseDate">
-      </div>
-      <div>
-        <label>Price:</label>
-        <input type="number" formControlName="price">
-      </div>
-      <div>
-        <label>Description:</label>
-        <textarea formControlName="description"></textarea>
-      </div>
-      <div>
-        <label>Publisher:</label>
-        <input type="text" formControlName="publisher">
-      </div>
-      <div>
-        <label>Developer:</label>
-        <input type="text" formControlName="developer">
-      </div>
-      <div formArrayName="gameGenres">
-        <h4>Game Genres</h4>
-        <div
-             [formGroupName]="0">
-          <div>
-            <label>Genre ID:</label>
-            <input type="text" formControlName="genreId">
-          </div>
-          <div>
-            <label>Sub-Genre ID:</label>
-            <input type="text" formControlName="subGenreId">
-          </div>
-          <div>
-            <label>Visual ID:</label>
-            <input type="text" formControlName="visualId">
-          </div>
-          <div>
-            <label>Theme ID:</label>
-            <input type="text" formControlName="themeId">
-          </div>
-          <div>
-            <label>Feature ID:</label>
-            <input type="text" formControlName="featureId">
-          </div>
-          <div>
-            <label>Player ID:</label>
-            <input type="text" formControlName="playerId">
-          </div>
-          <div>
-            <label>Platform ID:</label>
-            <input type="text" formControlName="platformId">
-          </div>
-        </div>
-        <div>
-          <button type="button">Add Genre</button>
-        </div>
-      </div>
-      <div formArrayName="medias">
-        <h4>Medias</h4>
-        <div
-             [formGroupName]="0">
-          <div>
-            <label>Media Name:</label>
-            <input type="text" formControlName="mediaName">
-          </div>
-          <div>
-            <label>Media Type:</label>
-            <input type="text" formControlName="mediaType">
-          </div>
-          <div>
-            <label>File Size:</label>
-            <input type="number" formControlName="fileSize">
-          </div>
-        </div>
-        <div>
-          <button type="button">Add Media</button>
-        </div>
-      </div>
-      <div formArrayName="icons">
-        <h4>Medias</h4>
-        <div
-             [formGroupName]="0">
-          <div>
-            <label>Media Name:</label>
-            <input type="text" formControlName="iconName">
-          </div>
-          <div>
-            <label>Media Type:</label>
-            <input type="text" formControlName="iconType">
-          </div>
-          <div>
-            <label>File Size:</label>
-            <input type="number" formControlName="fileSize">
-          </div>
-        </div>
-        <div>
-          <button type="button">Add Media</button>
-        </div>
-      </div>
-    </div>
-    <button type="submit">SAVE</button>
-<!--    <button type="button" (click)="AddForm()">Add</button>-->
-  </div>
-</form>
 
+
+<app-card cardClasses="w-11/12">
+  <div card-title>
+    <app-button [routerLink]="['add-games']" class="flex justify-end">Add</app-button>
+  </div>
+  <div card-content>
+        <app-card cardClasses="bg-white rounded-lg" [title]="'Games'">
+          <div class=" pb-6 -mt-6  relative" card-title>
+            <!--BUTTON ICON-->
+            <app-button-icon class="right-16 absolute">-</app-button-icon>
+            <app-button-icon class="right-9 absolute">□</app-button-icon>
+            <app-button-icon class="right-2 absolute">x</app-button-icon>
+          </div>
+          <div card-content>
+            <hr>
+            <div class=" rounded-lg mt-4 grid grid-cols-4 gap-4 p-4">
+              <div *ngFor="let game of Object(games)  ; index as i">
+                <div class="bg-sky-200 rounded-lg p-1 shadow">
+                  <div class="flex justify-end p-1 pb-2 h-8 gap-1">
+                    <app-button-icon (click)="(toggleEdit = !toggleEdit)?  gameId = game['gameId'] && (Index = i): 0">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                           stroke="currentColor" class="m-auto w-5 h-5">
+                        <path
+                          d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"/>
+                      </svg>
+                    </app-button-icon>
+                    <app-button-icon (click)="delete(game['gameId'])">x</app-button-icon>
+
+                  </div>
+                  <img src="favicon.ico" alt="">
+                  <span class="px-3 text-xl">{{game['gameName']}}</span>
+                  <div class="px-3 pb-1  flex justify-between items-end ">
+                    <div class="flex flex-col gap-2">
+                      <span class="pt-1">{{game['publisher']}}</span>
+                      <span class="-mt-4">{{game['developer']}}</span>
+                    </div>
+                    <span class="f"> ฿{{game['price']}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </app-card>
+
+  </div>
+</app-card>
+
+<!--single edit-->
+<div class="flex justify-center h-1/3 p-20 " *ngIf="toggleEdit">
+  <app-edit-games [game]="games" class="absolute w-full h-full bg-slate-800 bg-opacity-30  top-0 py-28 px-32"
+                  [gameId]="gameId"></app-edit-games>
+</div>

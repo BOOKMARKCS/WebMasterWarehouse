@@ -18,4 +18,7 @@ export class GamesService {
     return this.http.get(`${path}`);
   }
 
+  delete(path: string) {
+    return this.http.delete(`${this.apiUrl}/${path}`).pipe(catchError(error => of(error)));
+  }
 }

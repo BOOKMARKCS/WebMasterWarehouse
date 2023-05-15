@@ -1,1 +1,37 @@
-<p>details works!</p>
+<app-card cardClasses="bg-white rounded-lg border shadow-2xl shadow-teal-100 relative pt-2  "
+          [styleTitle]="'text-none font-medium'" [title]="'Game #1:'" [subTitle]="gameId">
+  <div card-title class="absolute top-4 right-2"> <!--BUTTON CLOSE-->
+    <app-button-icon class="right-16 absolute">-</app-button-icon>
+    <app-button-icon class="right-9 absolute">□</app-button-icon>
+    <app-button-icon (click)="remove(index)" class="right-2 absolute">x</app-button-icon>
+  </div>
+  <div class="select-none mt-2" card-content>
+    <hr>
+    <div>
+      <div class="pt-2  w-full mb-32">
+        <div class="w-full px-3 py-3 grid grid-cols-3 grid-rows-4 h-72  gap-4">
+          <app-card class="relative">
+            <div class="-mt-12 h-52" card-content>
+              <!--              <img class=" m-auto w-10/12 rounded row-start-1 row-end-2" src="assets/Image/18002-MOTOGP™20.jpg" alt="">-->
+              <div class="flex justify-between">
+                <app-input-image [label]="'Game Icon'"></app-input-image>
+                <app-input-image [label]="'Game Images'"></app-input-image>
+              </div>
+              <div class="border rounded-lg mt-4 h-full"></div>
+            </div>
+          </app-card>
+          <app-input [name]="'gameName'" [index]="index" [formName]="formGame" (handleInput)="setValueByControl('gameName', $event)" >Game Name</app-input>
+          <app-input [name]="'price'" [index]="index" [formName]="formGame" [type]="'number'" (handleInput)="setValueByControl('price', $event)">Price</app-input>
+          <app-input [name]="'publisher'" type="text" [index]="index" [formName]="formGame" (handleInput)="setValueByControl('publisher', $event)" class="col-span-2 col-start-2">Publisher</app-input>
+          <app-input [name]="'developer'" type="text" [index]="index" [formName]="formGame" (handleInput)="setValueByControl('developer', $event)" class="col-span-2 col-start-2">Developer</app-input>
+          <app-input-textarea [name]="'description'" [index]="index" [formName]="formGame"  class="h-44 col-span-3 col-start-2">Description</app-input-textarea>
+        </div>
+      </div>
+    </div>
+    <div class="m-2 flex justify-end gap-4">
+      <app-button-transparent>reset</app-button-transparent>
+      <app-button [backgroundColor]="'#009EFF'" [textColor]="'white'" [type]="'submit'" (click)="continue()">continue
+      </app-button>
+    </div>
+  </div>
+</app-card>

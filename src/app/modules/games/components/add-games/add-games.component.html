@@ -1,1 +1,94 @@
-<p>add-games works!</p>
+<!--<form *ngIf="formStatus" class="w-11/12 m-auto"  >-->
+<!--  &lt;!&ndash; Card component with game genre selection options &ndash;&gt;-->
+<!--  <app-card>-->
+<!--    <div card-content>-->
+<!--      <div class="flex justify-between">-->
+<!--        <p class="text-2xl">ADD GAMES</p>-->
+<!--        <div>-->
+<!--          <app-button [routerLink]="['']" class="mx-4" [type]="'submit'">Back</app-button>-->
+<!--          <app-button [type]="'submit'">Save</app-button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </app-card>-->
+<!--  &lt;!&ndash; Card component for game genre selection &ndash;&gt;-->
+<!--  &lt;!&ndash;  <app-card cardClasses="bg-white mt-4 py-4 pb-4 rounded-xl" [styleTitle]="'text-lg'" title="Game Genre">&ndash;&gt;-->
+<!--  <app-card cardClasses="bg-white mt-4 py-4 pb-4 rounded-xl" title="Game Genre">-->
+<!--    <div card-title>-->
+<!--      <div class="flex justify-end">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div card-content>-->
+<!--      <hr>-->
+<!--      &lt;!&ndash; Grid of select options for game genres &ndash;&gt;-->
+<!--      <app-genres [GenreForm]="formDataJson.controls['gameGenres']" (Genres)="onGenresSelected($event)"></app-genres>-->
+<!--    </div>-->
+<!--  </app-card>-->
+
+<!--  <app-card cardClasses="relative bg-white mt-4 py-2 rounded-xl" [title]="'Game Details'" [styleTitle]="'text-lg'">-->
+<!--    <div card-title>-->
+<!--      <div class="absolute top-2 right-4">-->
+<!--        <app-button-transparent [buttonType]="'button'" (click)="newGame()">New Game</app-button-transparent>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div card-content>-->
+<!--      <hr>-->
+<!--      <div class="mt-6">-->
+<!--        <div class="m-8 mt-10" *ngFor="let index of  formCount">-->
+<!--                    <app-details  [index]="index" [gameId]="games ? games : ['games']"></app-details>-->
+<!--          &lt;!&ndash;          {{formGame | json}}&ndash;&gt;-->
+<!--&lt;!&ndash;          {{index}}&ndash;&gt;-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--  </app-card>-->
+<!--</form>-->
+
+
+<div class="w-11/12 m-auto">
+  <!-- Card component with game genre selection options -->
+  <app-card>
+    <div card-content>
+      <div class="flex justify-between">
+        <p class="text-2xl">ADD GAMES</p>
+        <div>
+          <app-button [routerLink]="['']" class="mx-4" [type]="'submit'">Back</app-button>
+          <app-button [type]="'submit'" (click)="handleFormSubmit()">Save</app-button>
+        </div>
+      </div>
+    </div>
+  </app-card>
+  <!-- Card component for game genre selection -->
+  <!--  <app-card cardClasses="bg-white mt-4 py-4 pb-4 rounded-xl" [styleTitle]="'text-lg'" title="Game Genre">-->
+  <app-card cardClasses="bg-white mt-4 py-4 pb-4 rounded-xl" title="Game Genre">
+    <div card-title>
+      <div class="flex justify-end">
+      </div>
+    </div>
+    <div card-content>
+      <hr>
+      <!-- Grid of select options for game genres -->
+      <app-genres (Genres)="onGenresSelected($event)"></app-genres>
+    </div>
+  </app-card>
+
+  <app-card cardClasses="relative bg-white mt-4 py-2 rounded-xl" [title]="'Game Details'" [styleTitle]="'text-lg'">
+    <div card-title>
+      <div class="absolute top-2 right-4">
+        <app-button-transparent [buttonType]="'button'" (click)="newGame()">New Game</app-button-transparent>
+      </div>
+    </div>
+    <div card-content>
+      <hr>
+      <div class="mt-6" *ngIf="formGames">
+        <!-- Loop  Game Detail -->
+                <div class="m-8 mt-10" *ngFor="let gameControl of getFromArray(); index as i">
+                    <app-details [index]="i" [gameId]="0" [formGame]="getFromArray()"></app-details>
+                </div>
+
+      </div>
+    </div>
+  </app-card>
+</div>
+

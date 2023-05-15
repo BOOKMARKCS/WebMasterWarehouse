@@ -1,0 +1,43 @@
+<!--<div class="relative flex  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">-->
+<!--  <div class="p-6">-->
+<!--    <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">-->
+<!--      <ng-container *ngTemplateOutlet="titleTemplate"></ng-container>-->
+<!--    </h5>-->
+<!--    <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">-->
+<!--      <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>-->
+<!--    </p>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<ng-template #titleTemplate>-->
+<!--  <ng-content select="[card-title]"></ng-content>-->
+<!--</ng-template>-->
+
+<!--<ng-template #contentTemplate>-->
+<!--  <ng-content select="[card-content]"></ng-content>-->
+<!--</ng-template>-->
+
+<div class="block m-auto " [ngClass]="cardClasses">
+
+  <div class="text-black py-2 px-4">
+    <span class="{{styleTitle}}">{{title}}</span>
+    <span>{{subTitle}}</span>
+    <span class="ps-1">
+    <ng-container *ngTemplateOutlet="titleTemplate"></ng-container>
+    </span>
+
+
+    <div class="pt-2">
+      <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #titleTemplate>
+  <ng-content select="[card-title]"></ng-content>
+</ng-template>
+
+<ng-template #contentTemplate>
+  <ng-content select="[card-content]"></ng-content>
+</ng-template>
+

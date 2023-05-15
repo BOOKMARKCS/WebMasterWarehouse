@@ -1,0 +1,9 @@
+button.mat-button {
+  color: darkslategray;
+}
+button.mat-button:hover {
+  color: white;
+  background-color: #009EFF;
+}
+
+/*# sourceMappingURL=button-transparent.component.css.map */

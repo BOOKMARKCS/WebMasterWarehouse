@@ -10,3 +10,4 @@ export const GamesResolver: ResolveFn<Observable<any>> = () => {
 export const GamesGenresResolver: ResolveFn<Observable<any>> = () => {
   return of({Games: "GAMES GENRES"})
 }
+
